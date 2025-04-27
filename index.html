@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Track PDF Downloads</title>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-4W2H8MRC2C"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+        gtag('config', 'G-4W2H8MRC2C');
+
+        document.addEventListener('DOMContentLoaded',
+            function () {
+                document.querySelectorAll('.pdf-download').forEach(function (link) {
+                    link.addEventListener('click', function () {
+                        gtag('event', 'download-pdf', {
+                            'event_category': 'PDF Downloads',
+                            'event_label': this.href,
+                            'value': 1
+                        });
+                    });
+                });
+            }
+        );
+    </script>
+</head>
+
+<body>
+    <h1>PDF Downloads</h1>
+    <p>Click to download pdfs</p>
+    <a href="#" class="pdf-download">Download PDF 1</a><br>
+    <a href="#" class="pdf-download">Download PDF 2</a><br>
+    <a href="#" class="pdf-download">Download PDF 3</a><br>
+</body>
+
+</html>
