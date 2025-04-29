@@ -19,8 +19,8 @@
                 document.querySelectorAll('.pdf-download').forEach(function (link) {
                     link.addEventListener('click', function () {
                         gtag('event', 'download_pdf', {
-                            'file_url': this.href,
-                            'value': 1
+                            file_url: this.href
+                            
                         });
                     });
                 });
